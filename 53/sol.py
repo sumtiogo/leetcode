@@ -16,7 +16,10 @@ class Solution(object):
                 rmx = max(rmx2, sum2 + rmx1)
                 sum_ = sum1 + sum2
                 return mx, lmx, rmx, sum_
-
+        # mx (largest sum of this subarray), 
+        # lmx(largest sum starting from the left most element), 
+        # rmx(largest sum ending with the right most element), 
+        # sum_(the sum of the total subarray). 
         mx, lmx, rmx, sum_ = f(0, len(nums) - 1)
         return mx
 
