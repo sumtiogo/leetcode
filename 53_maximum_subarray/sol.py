@@ -25,8 +25,9 @@ class Solution(object):
         M = nums[0]
         pre = 0
         for n in nums:
-            pre = max(n, n + pre)
-            M = max(M, pre) 
+            pre = n if pre < 0 else n + pre
+            if pre > M:
+                M = pre
         return M
 
     # time: O(n) space: O(n)
@@ -61,7 +62,7 @@ def main():
     ]
     s = Solution()
     for nums, ans in test:
-        a = s.maxSubArray(nums)
+        a = s.maxSubArray2(nums)
         print(nums, ans, a, a == ans)
 
 if __name__ == "__main__":
